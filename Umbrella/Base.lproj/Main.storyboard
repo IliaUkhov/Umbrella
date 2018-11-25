@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,119 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hy0-2g-VqQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="637"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fXJ-Qb-CNW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVq-S3-wVO">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="453"/>
+                                            </scrollView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-5E-9jX">
+                                                <rect key="frame" x="0.0" y="463" width="375" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LVq-S3-wVO" secondAttribute="trailing" id="4BB-jI-eKc"/>
+                                            <constraint firstItem="LVq-S3-wVO" firstAttribute="leading" secondItem="fXJ-Qb-CNW" secondAttribute="leading" id="Hnm-5n-iQB"/>
+                                            <constraint firstItem="LVq-S3-wVO" firstAttribute="leading" secondItem="fXJ-Qb-CNW" secondAttribute="leading" id="gpx-Sh-b4n"/>
+                                            <constraint firstAttribute="trailing" secondItem="LVq-S3-wVO" secondAttribute="trailing" id="ipf-H3-b2L"/>
+                                        </constraints>
+                                    </stackView>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="xoT-SZ-hI1">
+                                        <rect key="frame" x="152" y="499" width="71" height="49"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-SZ-1pb">
+                                        <rect key="frame" x="0.0" y="548" width="375" height="0.0"/>
+                                    </pickerView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roc-cE-k9e">
+                                        <rect key="frame" x="100" y="548" width="175" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Use current location">
+                                            <color key="titleColor" red="0.2470588235" green="0.34901960780000002" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Pvk-N7-0Jy">
+                                        <rect key="frame" x="0.0" y="548" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yrc-qr-uWH">
+                                        <rect key="frame" x="8" y="604" width="359" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="tqz-ng-9Ge"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Next 24 hours"/>
+                                            <segment title="Next 4 days"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.24705882352941178" green="0.34901960784313724" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="onForecastTypeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="pR2-xP-KTb"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fXJ-Qb-CNW" firstAttribute="leading" secondItem="Hy0-2g-VqQ" secondAttribute="leading" id="0NZ-0c-tLs"/>
+                                    <constraint firstItem="Pvk-N7-0Jy" firstAttribute="leading" secondItem="Hy0-2g-VqQ" secondAttribute="leading" id="3ay-Mc-zXa"/>
+                                    <constraint firstItem="Yrc-qr-uWH" firstAttribute="width" secondItem="Hy0-2g-VqQ" secondAttribute="width" constant="-16" id="R4m-TY-DCz"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZf-SZ-1pb" secondAttribute="trailing" id="Ve6-uP-FKU"/>
+                                    <constraint firstAttribute="trailing" secondItem="fXJ-Qb-CNW" secondAttribute="trailing" id="hEd-TO-Tc0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pvk-N7-0Jy" secondAttribute="trailing" id="p1Z-CU-3Gt"/>
+                                    <constraint firstItem="aZf-SZ-1pb" firstAttribute="leading" secondItem="Hy0-2g-VqQ" secondAttribute="leading" id="z6q-wV-qcQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68078446061643838" green="0.87848326907996288" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Hy0-2g-VqQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1xh-b4-11b"/>
+                            <constraint firstItem="Hy0-2g-VqQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U88-nT-JzV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hy0-2g-VqQ" secondAttribute="bottom" constant="10" id="VFf-IY-imk"/>
+                            <constraint firstItem="Hy0-2g-VqQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YH1-YA-E52"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aoQ-C6-WGa" appends="YES" id="rQR-L6-mUX"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="xyf-5E-9jX" id="msX-r1-pIx"/>
+                        <outlet property="cityPicker" destination="aZf-SZ-1pb" id="iq4-cG-otm"/>
+                        <outlet property="locationButton" destination="roc-cE-k9e" id="1eK-D4-vwp"/>
+                        <outlet property="mainStackView" destination="Hy0-2g-VqQ" id="wk8-8Z-jaL"/>
+                        <outlet property="pageIndicator" destination="xoT-SZ-hI1" id="lq6-aX-KEE"/>
+                        <outlet property="scrollView" destination="LVq-S3-wVO" id="dy4-a2-Fhf"/>
+                        <outlet property="searchBar" destination="Pvk-N7-0Jy" id="BJd-dT-ojf"/>
+                        <outlet property="segmentedControl" destination="Yrc-qr-uWH" id="Q7O-23-mTp"/>
+                        <outletCollection property="viewsAboveSearchBar" destination="xoT-SZ-hI1" id="w7P-an-xe1"/>
+                        <outletCollection property="viewsAboveSearchBar" destination="fXJ-Qb-CNW" id="iyG-w0-eTI"/>
+                        <outletCollection property="viewsAboveSearchBar" destination="roc-cE-k9e" id="NBl-eX-O90"/>
+                        <outletCollection property="viewsAboveSearchBar" destination="roc-cE-k9e" id="FaL-wP-Boy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aoQ-C6-WGa">
+                    <connections>
+                        <action selector="onAnyTapAboveKeyboard:" destination="BYZ-38-t0r" id="FBi-Uq-Lv0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
